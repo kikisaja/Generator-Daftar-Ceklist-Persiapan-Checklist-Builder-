@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Builder 🎒</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-card">
+        <!-- Header -->
+        <header class="app-header">
+            <span class="badge">Saran No. 114</span>
+            <h1>🎒 TRAVEL CHECKLIST</h1>
+            <p>Buat daftar persiapan dan pantau persentase selesainya!</p>
+        </header>
+
+        <!-- Progress Bar Section -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span id="progress-text">0 dari 0 selesai</span>
+                <strong id="progress-percentage">0%</strong>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Form Tambah Item Baru -->
+        <form id="checklist-form" class="checklist-form">
+            <input type="text" id="new-item-input" placeholder="Tambah perlengkapan baru (misal: Paspor)..." autocomplete="off" required>
+            <button type="submit" class="btn-add">➕ Tambah</button>
+        </form>
+
+        <!-- Daftar Ceklist -->
+        <div class="checklist-container">
+            <ul id="checklist-items" class="checklist-items">
+                <!-- Di-generate otomatis oleh JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="checklist-footer">
+            <button id="reset-btn" class="footer-btn reset">🔄 Reset Semua</button>
+            <button id="clear-checked-btn" class="footer-btn clear">🗑️ Hapus yang Selesai</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
