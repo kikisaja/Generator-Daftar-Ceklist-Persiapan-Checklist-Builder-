@@ -1,0 +1,243 @@
+:root {
+    --bg-main: #facc15; /* Warna kuning pop */
+    --card-bg: #ffffff;
+    --stroke-dark: #0f172a;
+    --pop-green: #4ade80;
+    --pop-yellow: #facc15;
+    --pop-pink: #f472b6;
+    --pop-blue: #38bdf8;
+    --pop-purple: #c084fc;
+    --text-dark: #0f172a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- KARTU UTAMA WIDGET --- */
+.app-card {
+    background-color: var(--card-bg);
+    padding: 28px;
+    border-radius: 24px;
+    border: 4px solid var(--stroke-dark);
+    box-shadow: 10px 10px 0px var(--stroke-dark);
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* --- HEADER --- */
+.app-header {
+    text-align: center;
+}
+
+.badge {
+    background-color: var(--pop-purple);
+    color: #ffffff;
+    border: 2px solid var(--stroke-dark);
+    padding: 4px 12px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.app-header h1 {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.app-header p {
+    font-size: 0.82rem;
+    color: #475569;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* --- PROGRESS SECTION --- */
+.progress-section {
+    background-color: #f8fafc;
+    border: 3px solid var(--stroke-dark);
+    padding: 12px 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 4px 4px 0px var(--stroke-dark);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 14px;
+    background-color: #e2e8f0;
+    border: 2px solid var(--stroke-dark);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--pop-green);
+    transition: width 0.3s ease;
+}
+
+/* --- FORM TAMBAH ITEM --- */
+.checklist-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+}
+
+.checklist-form input {
+    padding: 10px 14px;
+    border: 3px solid var(--stroke-dark);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: #f8fafc;
+    outline: none;
+}
+
+.checklist-form input:focus {
+    background-color: #ffffff;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+}
+
+.btn-add {
+    background-color: var(--pop-blue);
+    border: 3px solid var(--stroke-dark);
+    padding: 0 16px;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+    transition: all 0.15s ease;
+}
+
+.btn-add:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--stroke-dark);
+}
+
+/* --- CHECKLIST CONTAINER --- */
+.checklist-container {
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checklist-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checklist-item {
+    background-color: #ffffff;
+    border: 3px solid var(--stroke-dark);
+    padding: 10px 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+    transition: background-color 0.2s ease;
+}
+
+.checklist-item.checked {
+    background-color: #f1f5f9;
+}
+
+.item-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.item-content input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--stroke-dark);
+    cursor: pointer;
+}
+
+.item-text {
+    font-size: 0.88rem;
+    font-weight: 800;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.checklist-item.checked .item-text {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+}
+
+/* --- FOOTER ACTIONS --- */
+.checklist-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.footer-btn {
+    border: 2px solid var(--stroke-dark);
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 0.75rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--stroke-dark);
+    transition: all 0.15s ease;
+}
+
+.footer-btn.reset { background-color: var(--pop-pink); }
+.footer-btn.clear { background-color: var(--pop-yellow); }
+
+.footer-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--stroke-dark);
+}
